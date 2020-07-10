@@ -12,8 +12,11 @@
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
+    "@jackfranklin/rollup-plugin-markdown": "^0.2.0",
     "compression": "^1.7.1",
+    "gray-matter": "^4.0.2",
     "polka": "next",
+    "rollup-plugin-glob": "^1.0.2",
     "sirv": "^0.4.0"
   },
   "devDependencies": {
