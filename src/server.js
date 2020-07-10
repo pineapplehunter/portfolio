@@ -9,11 +9,9 @@ const {
 } = process.env;
 const dev = NODE_ENV === 'development';
 
-const reponame = process.env.REPONAME || ""
-
 polka() // You can also use Express
 	.use(
-		`/${reponame}`,
+		`/portfolio`,
 		compression({
 			threshold: 0
 		}),
