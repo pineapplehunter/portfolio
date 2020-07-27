@@ -23,15 +23,15 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.0
 
-    - name: dump context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+    # - name: dump context
+    #   env:
+    #     GITHUB_CONTEXT: ${{ toJson(github) }}
+    #   run: echo "$GITHUB_CONTEXT"
     
-    - name: export
+    - name: build
       run: |
-        npm ci
-        npm run export
+        yarn
+        yarn build
     
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -39,5 +39,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.
         clean: true
-        FOLDER: __sapper__/export # The folder the action should deploy.
+        FOLDER: dist # The folder the action should deploy.
       
